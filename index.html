@@ -18,7 +18,8 @@
     <div class="container">
         <div>
             <h1>Analytics</h1>
-            <p>This page is intended a an easy to use template to set up a webpage ga-tracking. We will start off very simple and move to a bit more advanced methods after a while.</p>
+            <p>This page is intended a an easy to use template to set up a webpage ga-tracking. We will start off very
+                simple and move to a bit more advanced methods after a while.</p>
         </div>
         <!-- columns should be the immediate child of a .row -->
         <div class="grid">
@@ -28,14 +29,32 @@
                 <div class="ten columns"></div>
             </div>
 
-        <div class="row">
-            <div class="one-half column">A button or link is often one of the first things we wish to track.</div>
-            <div class="one-half column"><button class="button-primary">Button element</button></div>
+            <div class="row">
+                <div class="one-half column">A button or link is often one of the first things we wish to track.</div>
+                <div class="one-half column"><button class="button-primary">Button element</button></div>
+            </div>
         </div>
-    </div>
 
-    <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
-    <script src="js/scripts.js"></script>
+        <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
+        <script src="js/scripts.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-145815969-1');
+
+            var metricValue = '123';
+            ga('set', 'My_own_metric', metricValue);
+
+            var dimensionValue = 'My Dimension';
+            ga('set', 'My_own_dimension', dimensionValue);
+        </script>
 </body>
 
 </html>
