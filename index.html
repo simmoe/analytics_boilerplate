@@ -40,9 +40,9 @@
             <div class="row">
                     <div class="12 columns">
                         <h6>Please fill out this form to subscribe to our most fantastic newsletter</h6>
-                        <form target="tak.html">
+                        <form action="tak.html">
                             <input type="email" placeholder="fill in your email" />
-                            <button class="button-primary">subscribe</button>
+                            <button class="button-primary" type="submit">subscribe</button>
                         </form>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
                     });
                 }
 
-                window.location = './subpage.html';
-                console.log("User clicked: " + e.target);
+                if( ['zero', 'self-assured', 'self-insecure'].includes(event.target.getAttribute('id'))) window.location = './subpage.html';
+                console.log("user clicked: " + event.target.getAttribute('id'));
             });
 
             window.dataLayer = window.dataLayer || [];
