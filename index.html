@@ -47,13 +47,16 @@
             }
             gtag('js', new Date());
 
-            gtag('config', 'UA-145815969-1');
+            gtag('config', 'UA-145815969-1', {
+                'custom_map': {
+                    'how-old-are-you': 'age'
+                }
+            });
 
-            var metricValue = '123';
-            ga('set', 'My_own_metric', metricValue);
-
-            var dimensionValue = 'My Dimension';
-            ga('set', 'My_own_dimension', dimensionValue);
+            // Sends an event that passes 'age' as a parameter.
+            gtag('event', 'age_dimension', {
+                'age': 12
+            });
         </script>
 </body>
 
