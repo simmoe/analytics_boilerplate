@@ -40,11 +40,14 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
         <script>
+            document.addEventListener('click', (e) => {
+                // If the clicked element doesn't have the right selector, bail
+                if (event.target.matches('#zero')) {
+                    window.open( './subpage.html' );
+                }
 
-            document.addEventListener('click', (e)=>{
                 console.log(e.target);
-            }
-            );
+            });
 
             window.dataLayer = window.dataLayer || [];
 
