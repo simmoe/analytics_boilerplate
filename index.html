@@ -43,7 +43,13 @@
             document.addEventListener('click', (e) => {
                 // If the clicked element doesn't have the right selector, bail
                 if (event.target.matches('#zero')) {
-                    //window.open( './subpage.html' );
+
+                    gtag('event', 'Clicked action button' , {
+                        'event_category': 'interactive tests' ,
+                        'event_label': 'First button clicked' ,
+                        'value': 1
+                    });
+
                     window.location = './subpage.html';
                 }
 
@@ -58,8 +64,6 @@
             gtag('js', new Date());
 
             gtag('config', 'UA-145815969-1');
-
-
         </script>
 </body>
 
