@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Subpage</title>
+    <meta name="description" content="Setup Google Analytics">
+    <meta name="author" content="Moe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="../fav.png" type="image/ico" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+
+<body>
+    <!-- .container is main centered wrapper -->
+    <div class="container">
+        <div>
+            <h1>The end!</h1>
+            <p>You seeing this page, now, means you have converted the targeted goal. We are very happy to see you
+                leave, as we now have all the information we need - and you should have the same.</p>
+            <p>If for some reason you don't feel this last statement aligns with your own perception, please refer to
+                the official reference of the Google <a
+                    href="https://www.thinkwithgoogle.com/marketing-resources/micro-moments/zero-moment-truth/">Zero
+                    moment of truth.</a></p>
+        </div>
+    </div>
+
+    <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
+    <script src="js/scripts.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145815969-1', {
+            'custom_map': {
+                'how-old-are-you': 'age'
+            }
+        });
+
+        // Sends an event that passes 'age' as a parameter.
+        gtag('event', 'how-old-are-you', {
+            'age': 12
+        });
+    </script>
+</body>
+
+</html>

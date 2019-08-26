@@ -31,7 +31,7 @@
 
             <div class="row">
                 <div class="one-half column">A button or link is often one of the first things we wish to track.</div>
-                <div class="one-half column"><button class="button-primary">Button element</button></div>
+                <div class="one-half column"><button id="zero" class="button-primary">Button element</button></div>
             </div>
         </div>
 
@@ -40,6 +40,12 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
         <script>
+
+            document.addEventListener('click', (e)=>{
+                console.log(e.target);
+            }
+            );
+
             window.dataLayer = window.dataLayer || [];
 
             function gtag() {
