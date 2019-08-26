@@ -23,16 +23,21 @@
         </div>
         <!-- columns should be the immediate child of a .row -->
         <div class="grid">
-            <!-- just use a number and class 'column' or 'columns' -->
-            <div class="row">
-                <div class="two columns"></div>
-                <div class="ten columns"></div>
-            </div>
 
             <div class="row">
                 <div class="one-half column">A button or link is often one of the first things we wish to track.</div>
                 <div class="one-half column"><button id="zero" class="button-primary">Button element</button></div>
             </div>
+            <!-- just use a number and class 'column' or 'columns' -->
+            <div class="row">
+                <div class="two columns">
+                        <a id="self-assured" href="#">I am aware of the consequences, take me on</a>
+                </div>
+                <div class="ten columns">
+                        <a id="self-insecure" href="#">I am not sure of the consequences, should i click this link?</a>
+                </div>
+            </div>
+
         </div>
 
         <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
@@ -43,17 +48,29 @@
             document.addEventListener('click', (e) => {
                 // If the clicked element doesn't have the right selector, bail
                 if (event.target.matches('#zero')) {
-
-                    gtag('event', 'Clicked action button' , {
-                        'event_category': 'interactive tests' ,
-                        'event_label': 'First button clicked' ,
+                    gtag('event', 'Clicked action button', {
+                        'event_category': 'interactive tests',
+                        'event_label': 'First button clicked',
                         'value': 1
                     });
-
-                    window.location = './subpage.html';
+                }
+                if (event.target.matches('#self-assured')) {
+                    gtag('event', 'Clicked self-assured', {
+                        'event_category': 'interactive tests',
+                        'event_label': 'Self assured link',
+                        'value': 10
+                    });
+                }
+                if (event.target.matches('#self-insecure')) {
+                    gtag('event', 'Clicked self-insecure', {
+                        'event_category': 'interactive tests',
+                        'event_label': 'Self insecure link',
+                        'value': 20
+                    });
                 }
 
-                console.log(e.target);
+                window.location = './subpage.html';
+                console.log("User clicked: " + e.target);
             });
 
             window.dataLayer = window.dataLayer || [];
