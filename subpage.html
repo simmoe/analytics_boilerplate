@@ -22,7 +22,8 @@
                 leave, as we now have all the information we need - and you should have the same.</p>
             <p>If for some reason you don't feel this last statement aligns with your own perception, please refer to
                 the official reference of the Google <a
-                    href="https://www.thinkwithgoogle.com/marketing-resources/micro-moments/zero-moment-truth/">Zero
+                    onclick="getOutboundLink('https://www.thinkwithgoogle.com/marketing-resources/micro-moments/zero-moment-truth/'); return false;"
+                    >Zero
                     moment of truth.</a></p>
         </div>
     </div>
@@ -49,6 +50,24 @@
         gtag('event', 'how-old-are-you', {
             'age': 14
         });
+    </script>
+    <script>
+        /**
+         * Function that registers a click on an outbound link in Analytics.
+         * This function takes a valid URL string as an argument, and uses that URL string
+         * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+         * using 'navigator.sendBeacon' in browser that support it.
+         */
+        let getOutboundLink = function (url) {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': url,
+                'transport_type': 'beacon',
+                'event_callback': function () {
+                    document.location = url;
+                }
+            });
+        }
     </script>
 </body>
 

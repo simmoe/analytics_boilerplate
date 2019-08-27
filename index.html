@@ -27,71 +27,71 @@
                 <div class="one-half column">A button or link is often one of the first things we wish to track.</div>
                 <div class="one-half column"><button id="zero" class="button-primary">Button element</button></div>
             </div>
-            <hr/>
+            <hr />
             <!-- just use a number and class 'column' or 'columns' -->
             <div class="row">
                 <div class="6 columns">
-                        <a id="self-assured" href="#">I am aware of the consequences, take me on</a>
+                    <a id="self-assured" href="#">I am aware of the consequences, take me on</a>
                 </div>
                 <div class="6 columns">
-                        <a id="self-insecure" href="#">I am not sure of the consequences, should i click this link?</a>
+                    <a id="self-insecure" href="#">I am not sure of the consequences, should i click this link?</a>
                 </div>
             </div>
             <div class="row">
-                    <div class="12 columns">
-                        <h6>Please fill out this form to subscribe to our most fantastic newsletter</h6>
-                        <form action="tak.html">
-                            <input type="email" placeholder="fill in your email" />
-                            <button class="button-primary" type="submit">subscribe</button>
-                        </form>
-                    </div>
+                <div class="12 columns">
+                    <h6>Please fill out this form to subscribe to our most fantastic newsletter</h6>
+                    <form action="tak.html">
+                        <input type="email" placeholder="fill in your email" />
+                        <button class="button-primary" type="submit">subscribe</button>
+                    </form>
                 </div>
-    
-
+            </div>
         </div>
+    </div>
 
-        <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
-        <script src="js/scripts.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
-        <script>
-            document.addEventListener('click', (e) => {
-                // If the clicked element doesn't have the right selector, bail
-                if (event.target.matches('#zero')) {
-                    gtag('event', 'Clicked action button', {
-                        'event_category': 'interactive tests',
-                        'event_label': 'First button clicked',
-                        'value': 1
-                    });
-                }
-                if (event.target.matches('#self-assured')) {
-                    gtag('event', 'Clicked self-assured', {
-                        'event_category': 'interactive tests',
-                        'event_label': 'Self assured link',
-                        'value': 10
-                    });
-                }
-                if (event.target.matches('#self-insecure')) {
-                    gtag('event', 'Clicked self-insecure', {
-                        'event_category': 'interactive tests',
-                        'event_label': 'Self insecure link',
-                        'value': 20
-                    });
-                }
-
-                if( ['zero', 'self-assured', 'self-insecure'].includes(event.target.getAttribute('id'))) window.location = './subpage.html';
-                console.log("user clicked: " + event.target.getAttribute('id'));
-            });
-
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
+    <!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) -->
+    <script src="js/scripts.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
+    <script>
+        document.addEventListener('click', (e) => {
+            // If the clicked element doesn't have the right selector, bail
+            if (event.target.matches('#zero')) {
+                gtag('event', 'Clicked action button', {
+                    'event_category': 'interactive tests',
+                    'event_label': 'First button clicked',
+                    'value': 1
+                });
             }
-            gtag('js', new Date());
+            if (event.target.matches('#self-assured')) {
+                gtag('event', 'Clicked self-assured', {
+                    'event_category': 'interactive tests',
+                    'event_label': 'Self assured link',
+                    'value': 10
+                });
+            }
+            if (event.target.matches('#self-insecure')) {
+                gtag('event', 'Clicked self-insecure', {
+                    'event_category': 'interactive tests',
+                    'event_label': 'Self insecure link',
+                    'value': 20
+                });
+            }
 
-            gtag('config', 'UA-145815969-1');
-        </script>
+            if (['zero', 'self-assured', 'self-insecure'].includes(event.target.getAttribute('id'))) window
+                .location = './subpage.html';
+            console.log("user clicked: " + event.target.getAttribute('id'));
+        });
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145815969-1');
+    </script>
 </body>
 
 </html>
