@@ -32,6 +32,33 @@
             'OPT_CONTAINER_ID': true
         });
     </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
+<script>
+    document.addEventListener('click', (e) => {
+        // If the clicked element doesn't have the right selector, bail
+        if (e.target.matches('#image-1')) {
+            gtag('event', 'Clicked image-1', {
+                'event_category': 'A/B test',
+                'event_label': 'First image clicked',
+                'value': 1
+            });
+        }
+        console.log("user clicked: " + e.target.getAttribute('id'));
+    });
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145815969-1', {
+        'optimize_id': 'GTM-TVQRBW3'
+    });
+</script>
+
 </head>
 
 <body>
@@ -41,31 +68,6 @@
             target.</p>
         <img id="image-1" src="./Cute-Dog-1.jpg">
     </div>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145815969-1"></script>
-    <script>
-        document.addEventListener('click', (e) => {
-            // If the clicked element doesn't have the right selector, bail
-            if (e.target.matches('#image-1')) {
-                gtag('event', 'Clicked image-1', {
-                    'event_category': 'A/B test',
-                    'event_label': 'First image clicked',
-                    'value': 1
-                });
-            }
-            console.log("user clicked: " + e.target.getAttribute('id'));
-        });
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-145815969-1', {
-            'optimize_id': 'GTM-TVQRBW3'
-        });
-    </script>
 
 </body>
 
