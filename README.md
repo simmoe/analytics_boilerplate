@@ -1,6 +1,8 @@
 # analytics_boilerplate
 
-This landingpage demonstrates basic Google Analytics setup and tracking. <a href="https://simmoe.github.io/spa_landingpage_demo/" View the page here
+This landingpage demonstrates basic Google Analytics setup and tracking. 
+
+<a href="https://simmoe.github.io/analytics_boilerplate/">View the page here</a>
 
 ## Custom campaigns
 To set up a custom campaign, we use custom URL's. The following link will generate a new visit in the custom campaign <strong>"quick_campaign"</strong>, from the source <strong>"github"</strong> and medium, <strong>"web"</strong>:
