@@ -46,6 +46,13 @@
                     </form>
                 </div>
             </div>
+            <div class="row">
+                <div class="12 columns">
+                    <h6>A/B test</h6>
+                    <a href="./ab1.html">Follow this link to view the A/B test</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -56,21 +63,21 @@
     <script>
         document.addEventListener('click', (e) => {
             // If the clicked element doesn't have the right selector, bail
-            if (event.target.matches('#zero')) {
+            if (e.target.matches('#zero')) {
                 gtag('event', 'Clicked action button', {
                     'event_category': 'interactive tests',
                     'event_label': 'First button clicked',
                     'value': 1
                 });
             }
-            if (event.target.matches('#self-assured')) {
+            if (e.target.matches('#self-assured')) {
                 gtag('event', 'Clicked self-assured', {
                     'event_category': 'interactive tests',
                     'event_label': 'Self assured link',
                     'value': 10
                 });
             }
-            if (event.target.matches('#self-insecure')) {
+            if (e.target.matches('#self-insecure')) {
                 gtag('event', 'Clicked self-insecure', {
                     'event_category': 'interactive tests',
                     'event_label': 'Self insecure link',
@@ -78,9 +85,9 @@
                 });
             }
 
-            if (['zero', 'self-assured', 'self-insecure'].includes(event.target.getAttribute('id'))) window
+            if (['zero', 'self-assured', 'self-insecure'].includes(e.target.getAttribute('id'))) window
                 .location = './subpage.html';
-            console.log("user clicked: " + event.target.getAttribute('id'));
+            console.log("user clicked: " + e.target.getAttribute('id'));
         });
 
         window.dataLayer = window.dataLayer || [];
